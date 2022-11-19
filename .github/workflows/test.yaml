@@ -1,0 +1,27 @@
+name: Saurabh
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - uses: actions/checkout@v2
+    
+  deployToStage:     
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+
+    - name: Add Heroku remote
+      run: |
+        heroku git:remote --app test1215
