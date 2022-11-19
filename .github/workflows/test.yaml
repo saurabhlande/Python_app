@@ -26,8 +26,12 @@ jobs:
       run: |
         heroku git:remote --app test1215
 
+
+
     - name: Push to Heroku staging
       run: |
+        git config --global user.email "saurabhlande15@gmail.com"
+        git config --global user.name "saurabhlande"
         git add .
         git commit -m "Chalo bhai"
         git push heroku master -f
