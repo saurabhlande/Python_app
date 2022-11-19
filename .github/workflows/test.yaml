@@ -30,4 +30,4 @@ jobs:
 
     - name: Push to Heroku staging
       run: |
-        git push heroku master -f
+        git push heroku master
