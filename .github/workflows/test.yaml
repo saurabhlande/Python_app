@@ -25,3 +25,9 @@ jobs:
     - name: Add Heroku remote
       run: |
         heroku git:remote --app test1215
+
+    - name: Push to Heroku staging
+      run: |
+        git add .
+        git commit -m "Chalo bhai"
+        git push heroku master -f
